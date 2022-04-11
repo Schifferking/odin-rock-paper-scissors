@@ -7,6 +7,26 @@
 
     <body>
         <script>
+            //Generate a random integer from a range
+            function randomIntRange(min, max) {
+                return Math.floor(Math.random() * (max - min + 1) + min)
+            }
+            
+            function computerPlay() {
+                //Based on a random number, return 'rock', 'paper'
+                //or 'scissors'
+                let rndNum = randomIntRange(1, 3);
+                
+                if (rndNum === 1) {
+                    return 'rock'
+                } else if (rndNum === 2) {
+                    return 'paper'
+                } else {
+                    return 'scissors'
+                }
+            }
+
+            console.log(computerPlay());
         </script>    
     </body>
 </html>
