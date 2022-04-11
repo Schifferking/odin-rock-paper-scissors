@@ -18,18 +18,34 @@
                 let rndNum = randomIntRange(1, 3);
                 
                 if (rndNum === 1) {
-                    return 'rock'
+                    return "rock"
                 } else if (rndNum === 2) {
-                    return 'paper'
+                    return "paper"
                 } else {
-                    return 'scissors'
+                    return "scissors"
                 }
             }
 
             function getPlayerChoice() {
-                let playerChoice = prompt('Please enter a choice (rock, paper or scissors):');
+                let playerChoice = prompt("Please enter a choice (rock, paper or scissors):");
                 return playerChoice.toLocaleLowerCase();
-            }         
+            }
+            
+            function playRound(playerSelection, computerSelection) {
+                if (playerSelection === computerSelection) {
+                    return "It's a tie!"
+                } else if ((playerSelection === "rock" && computerSelection === "paper") ||
+                (playerSelection === "paper" && computerSelection === "scissors") ||
+                (playerSelection === "scissors" && computerSelection === "rock")) {
+                    return `You Lose! ${computerSelection[0].toUpperCase()
+                         + computerSelection.slice(1)} beats ${playerSelection[0].toUpperCase() 
+                         + playerSelection.slice(1)}`
+                } else {
+                    return `You Win! ${playerSelection[0].toUpperCase()
+                         + playerSelection.slice(1)} beats ${computerSelection[0].toUpperCase() 
+                         + computerSelection.slice(1)}`
+                }                
+            }
         </script>    
     </body>
 </html>
