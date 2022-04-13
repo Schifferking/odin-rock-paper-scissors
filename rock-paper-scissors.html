@@ -41,33 +41,6 @@
               return `You Win! ${playerSelection[0].toUpperCase() + playerSelection.slice(1)} beats ${computerSelection[0].toUpperCase() + computerSelection.slice(1)}`
           }                
         }
-
-        function game() {
-          let playyerWins = 0;
-          let computerWins = 0;
-          let winnerRound;
-
-          for (let i = 0; i < 5; i++) {
-            winnerRound = playRound(getPlayerChoice(), computerPlay());
-            console.log(winnerRound);
-
-            if (winnerRound.startsWith("You Win")) {
-              playyerWins += 1;
-            } else if (winnerRound.startsWith("You Lose")){
-              computerWins += 1;
-            }
-          }
-
-          if (playyerWins > computerWins) {
-            console.log("You Win!");
-          } else if (playyerWins < computerWins){
-            console.log("You lose!");
-          } else {
-            console.log("It's a tie!")
-          }
-        }
-
-        game();
     </script>    
   </body>
 </html>
