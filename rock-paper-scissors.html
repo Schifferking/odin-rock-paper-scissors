@@ -6,6 +6,10 @@
   </head>
 
   <body>
+    <button id="rock">Rock</button>
+    <button id="paper">Paper</button>
+    <button id="scissors">Scissors</button>
+
     <script>
         //Generate a random integer from a range
         function randomIntRange(min, max) {
@@ -41,6 +45,14 @@
               return `You Win! ${playerSelection[0].toUpperCase() + playerSelection.slice(1)} beats ${computerSelection[0].toUpperCase() + computerSelection.slice(1)}`
           }                
         }
+
+        const buttons = document.querySelectorAll('button');
+
+        buttons.forEach((button) => {
+          button.addEventListener('click', e => {
+            console.log(playRound(button.id, computerPlay()));
+          });
+        });         
     </script>    
   </body>
 </html>
