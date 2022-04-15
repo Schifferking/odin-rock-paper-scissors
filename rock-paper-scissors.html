@@ -50,7 +50,8 @@
   
           buttons.forEach((button) => {
             button.addEventListener('click', e => {
-              console.log(playRound(button.id, computerPlay()));
+              let roundResult = playRound(button.id, computerPlay());
+              console.log(roundResult);
             });
           });         
 
@@ -61,12 +62,21 @@
           const div = document.querySelector('.score');
           const pPlayerScore = document.createElement('p');
           const pComputerScore = document.createElement('p');
+          const pRoundResult = document.createElement('p');
+
+          //Setting classes to elements
+          pPlayerScore.setAttribute('class', 'player');
+          pComputerScore.setAttribute('class', 'computer');
+          pRoundResult.setAttribute('class', 'round');
 
           pPlayerScore.textContent = "Player: 0";
           pComputerScore.textContent = "Computer: 0";
+          pRoundResult.textContent = "";
 
+          //display on the page
           div.appendChild(pPlayerScore);
-          div.appendChild(pComputerScore);          
+          div.appendChild(pComputerScore);
+          div.appendChild(pRoundResult);
         }
 
         function game() {
@@ -75,6 +85,12 @@
 
           const buttons = createButtons();
           createParagraphs();
+
+          // Obtain points from playRound function (maybe create a function)
+          // Add those points to their corresponding variable
+          // Update the paragraph elements
+          // When the computer or the player gets 5 points, alert who won
+          // Ask for another game (optional)
         }
 
         game();
