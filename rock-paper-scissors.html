@@ -45,13 +45,23 @@
           }                
         }
 
-        const buttons = document.querySelectorAll('button');
+        function createButtons(){          
+          const buttons = document.querySelectorAll('button');
+  
+          buttons.forEach((button) => {
+            button.addEventListener('click', e => {
+              console.log(playRound(button.id, computerPlay()));
+            });
+          });         
 
-        buttons.forEach((button) => {
-          button.addEventListener('click', e => {
-            console.log(playRound(button.id, computerPlay()));
-          });
-        });         
+        }
+
+        function game() {
+          let playerScore = 0;
+          let computerScore = 0;
+
+          const buttons = createButtons();
+        }
     </script>    
   </body>
 </html>
