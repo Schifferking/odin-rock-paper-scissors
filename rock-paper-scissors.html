@@ -54,6 +54,19 @@
             });
           });         
 
+          return buttons
+        }
+
+        function createParagraphs() {
+          const div = document.querySelector('.score');
+          const pPlayerScore = document.createElement('p');
+          const pComputerScore = document.createElement('p');
+
+          pPlayerScore.textContent = "Player: 0";
+          pComputerScore.textContent = "Computer: 0";
+
+          div.appendChild(pPlayerScore);
+          div.appendChild(pComputerScore);          
         }
 
         function game() {
@@ -61,7 +74,10 @@
           let computerScore = 0;
 
           const buttons = createButtons();
+          createParagraphs();
         }
+
+        game();
     </script>    
   </body>
 </html>
