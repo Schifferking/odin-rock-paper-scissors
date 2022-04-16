@@ -52,6 +52,14 @@
           pWinner.textContent = winnerArray[0] + " " + score;
         }
 
+        function verifyIfGameIsOver(player) {
+          let pPlayer = document.querySelector(player);
+          let score = pPlayer.textContent[pPlayer.textContent.length - 1];
+          if (score === "5") {
+            alert(player.slice(1) + " has won");
+          }
+        }
+
         function createButtons(){          
           const buttons = document.querySelectorAll('button');
   
@@ -63,9 +71,11 @@
               if (roundResult.startsWith("You Win!")) {
                 //player wins
                 updateScore(".player");
+                verifyIfGameIsOver(".player");
               } else if (roundResult.startsWith("You Lose!")){
                 //computer wins
                 updateScore(".computer");
+                verifyIfGameIsOver(".computer");
               }
             });
           });         
@@ -101,9 +111,6 @@
           const buttons = createButtons();
           createParagraphs();
 
-          // Obtain points from playRound function (maybe create a function)
-          // Add those points to their corresponding variable
-          // Update the paragraph elements
           // When the computer or the player gets 5 points, alert who won
           // Ask for another game (optional)
         }
