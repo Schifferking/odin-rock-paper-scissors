@@ -49,9 +49,10 @@
           const buttons = document.querySelectorAll('button');
   
           buttons.forEach((button) => {
-            button.addEventListener('click', e => {
+            button.addEventListener('click', function(e) {
               let roundResult = playRound(button.id, computerPlay());
-              console.log(roundResult);
+              pRoundResult = document.querySelector('.round');
+              pRoundResult.textContent = roundResult;
             });
           });         
 
